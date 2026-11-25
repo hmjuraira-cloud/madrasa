@@ -1,126 +1,164 @@
 <!DOCTYPE html><html lang="bn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#0b3b35"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><title>মাদ্রাসা ব্যবস্থাপনা</title>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@600;700&family=Amiri&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#eef3f1;--sf:#fff;--tx:#14201c;--mu:#5d6b66;--g:#0f5c4d;--on:#fff;--a:#b8821f;--ln:#d5dfdb;--r:#b83227;--ok:#1e7a4f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f1816;--sf:#18241f;--tx:#e8f0ec;--mu:#98a8a1;--g:#3fb597;--on:#06201a;--a:#e0b050;--ln:#2a3a34;--r:#ef7a6c;--ok:#5cc58f}}
-:root[data-theme=dark]{--bg:#0f1816;--sf:#18241f;--tx:#e8f0ec;--mu:#98a8a1;--g:#3fb597;--on:#06201a;--a:#e0b050;--ln:#2a3a34;--r:#ef7a6c;--ok:#5cc58f}
-*{box-sizing:border-box}html,body{margin:0}body{background:var(--bg);color:var(--tx);font:16px/1.5 'Hind Siliguri',system-ui,sans-serif;padding-bottom:76px}
-header{background:var(--g);color:var(--on);padding:16px 18px}header h1{margin:0;font-size:20px}header p{margin:0;opacity:.85;font-size:14px}
-main{padding:14px;max-width:640px;margin:auto}
-.card{background:var(--sf);border:1px solid var(--ln);border-radius:12px;padding:12px 14px;margin-bottom:10px}
-.row{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
-.big{font-size:26px;font-weight:700;line-height:1.2}.mu{color:var(--mu);font-size:14px}
-.in{color:var(--ok)}.out{color:var(--r)}
-h2{font-size:17px;margin:16px 0 8px}
-button,.btn{font:inherit;background:var(--g);color:var(--on);border:0;border-radius:10px;padding:9px 14px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block}
-button.alt{background:transparent;color:var(--g);border:1.5px solid var(--g)}button.del{background:var(--r);color:#fff}button.sm{padding:5px 10px;font-size:14px}
-input,select,textarea{font:inherit;width:100%;padding:10px;border:1px solid var(--ln);border-radius:10px;background:var(--sf);color:var(--tx);margin:3px 0 10px}
-label{font-size:14px;color:var(--mu)}
-nav{position:fixed;left:0;right:0;bottom:0;background:var(--sf);border-top:1px solid var(--ln);display:flex;padding-bottom:env(safe-area-inset-bottom,0px)}
-nav button{flex:1;background:none;color:var(--mu);border-radius:0;padding:10px 2px;font-size:13px}nav button.on{color:var(--g);box-shadow:inset 0 3px 0 var(--g)}
-.bar{height:6px;background:var(--ln);border-radius:4px;overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;background:var(--a)}
-#sh{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:flex-end;z-index:9}#sh.o{display:flex}
-#sh>div{background:var(--bg);width:100%;max-height:92%;overflow:auto;border-radius:16px 16px 0 0;padding:16px;max-width:640px;margin:auto}
-.tg{display:flex;gap:6px}.tg button{background:var(--ln);color:var(--tx);padding:6px 12px}.tg button.p{background:var(--ok);color:#fff}.tg button.ab{background:var(--r);color:#fff}
-.empty{text-align:center;color:var(--mu);padding:24px 8px}
-header{background:#0b3b35 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cg fill='none' stroke='%23d4a63a' stroke-opacity='.3'%3E%3Crect x='10' y='10' width='28' height='28'/%3E%3Crect x='10' y='10' width='28' height='28' transform='rotate(45 24 24)'/%3E%3C/g%3E%3C/svg%3E");color:#f3e6bf;padding:24px 18px 28px;border-bottom:4px solid #d4a63a}
-header h1{font:700 26px 'Noto Serif Bengali','Hind Siliguri',serif;color:#f6d77e}header p{color:#d9e6e0}
-.card{border-radius:6px 20px 6px 20px;box-shadow:0 1px 0 var(--ln)}
-.big,h2{font-family:'Noto Serif Bengali','Hind Siliguri',serif}h2{color:var(--g);border-right:0;border-left:4px solid #d4a63a;padding-left:8px}
-.hero{background:#0b3b35;color:#f6d77e;border-color:#d4a63a}.hero .mu{color:#d9c58a}
-.av{width:54px;height:54px;flex:none;clip-path:polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%);background:#0b3b35;color:#f6d77e;display:grid;place-items:center;font:700 22px 'Noto Serif Bengali',serif;object-fit:cover}
-.pz{display:grid;grid-template-columns:repeat(30,1fr);gap:2px;margin-top:10px}.pz i{height:9px;border-radius:2px;background:var(--ln)}.pz i.f{background:#d4a63a}
-button{border-radius:999px}nav{border-top:3px solid #d4a63a}nav button{line-height:1.3;font-size:12px}nav button.on{box-shadow:none;color:var(--g);font-weight:700;background:rgba(212,166,58,.18)}
-.nm{font-size:17px}.bsm{font:400 24px Amiri,serif;color:#d4a63a;text-align:center;direction:rtl;margin-bottom:6px}header h1,header p{text-align:center}.log{font-size:14px;border-bottom:1px dashed var(--ln);padding:5px 0}.card:active{transform:scale(.985)}
+:root{--bg:#f1f4fa;--sf:#fff;--tx:#141b2d;--mu:#667089;--ln:#e2e6f0;--g:#0f766e;--gold:#e9b949;--r:#e5484d;--ok:#12a36e;--sh:0 10px 26px -12px rgba(30,40,90,.35);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0b1120;--sf:#151d31;--tx:#eaf0fb;--mu:#93a0bb;--ln:#26314b;--g:#2dd4bf;--r:#ff7a7f;--ok:#4ade80}}
+:root[data-theme=dark]{--bg:#0b1120;--sf:#151d31;--tx:#eaf0fb;--mu:#93a0bb;--ln:#26314b;--g:#2dd4bf;--r:#ff7a7f;--ok:#4ade80}
+*{box-sizing:border-box}html,body{margin:0}body{background:var(--bg);color:var(--tx);font:16px/1.5 'Hind Siliguri',system-ui,sans-serif;padding-bottom:96px}
+header{background:radial-gradient(90% 130% at 100% 0,rgba(124,92,255,.6),transparent 62%),radial-gradient(70% 100% at 0 100%,rgba(233,185,73,.38),transparent 62%),linear-gradient(135deg,#0a3a34,#0f766e);color:#fff;padding:22px 18px 46px;border-radius:0 0 32px 32px;text-align:center}
+.bsm{font:400 24px Amiri,serif;color:var(--gold);direction:rtl}
+header h1{margin:2px 0;font:700 27px 'Noto Serif Bengali',serif;color:#fff}header p{margin:0;font-size:14px;opacity:.85}
+main{padding:14px;max-width:640px;margin:auto}.pull{margin-top:-34px}
+.card{background:var(--sf);border-radius:6px 22px 6px 22px;padding:12px 14px;margin-bottom:10px;box-shadow:var(--sh)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.fl{display:flex;gap:10px;align-items:center}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}.g3{grid-template-columns:repeat(3,1fr)}
+.st{display:flex;gap:10px;align-items:center;background:var(--sf);border-radius:18px;padding:11px;box-shadow:var(--sh)}
+.ic{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;font-size:20px;flex:none;box-shadow:inset 0 -3px 0 rgba(0,0,0,.12)}
+.big{font:700 21px 'Noto Serif Bengali',serif;line-height:1.2}.mu{color:var(--mu);font-size:13px}.in{color:var(--ok)}.out{color:var(--r)}
+.tl{background:var(--sf);border:0;border-radius:18px;padding:12px 4px;box-shadow:var(--sh);color:var(--tx);font:600 13px inherit;font-family:inherit;text-align:center;cursor:pointer}.tl .ic{margin:0 auto 6px}
+h2{font:700 17px 'Noto Serif Bengali',serif;margin:18px 0 8px;display:flex;align-items:center;gap:8px}h2:before{content:"";width:10px;height:10px;transform:rotate(45deg);background:linear-gradient(135deg,var(--gold),#7c5cff)}
+button,.btn{font:inherit;font-weight:600;background:linear-gradient(135deg,#0f766e,#2f80ed);color:#fff;border:0;border-radius:999px;padding:9px 16px;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 6px 14px -8px #0f766e}
+button.alt{background:transparent;color:var(--g);box-shadow:inset 0 0 0 1.5px var(--g)}button.del{background:linear-gradient(135deg,#ef476f,#e5484d)}button.sm,.btn.sm{padding:5px 12px;font-size:14px}
+input,select,textarea{font:inherit;width:100%;padding:11px;border:1.5px solid var(--ln);border-radius:14px;background:var(--sf);color:var(--tx);margin:3px 0 10px}input:focus,select:focus,textarea:focus{outline:0;border-color:#7c5cff}
+label{font-size:13px;color:var(--mu)}
+nav{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));background:var(--sf);border-radius:26px;display:flex;padding:6px;box-shadow:0 14px 34px -10px rgba(20,30,80,.5);max-width:620px;margin:auto}
+nav button{flex:1;background:none;color:var(--mu);box-shadow:none;padding:6px 0;border-radius:20px;font-size:11.5px;line-height:1.25}nav button.on{background:linear-gradient(135deg,#0f766e,#7c5cff);color:#fff}
+.av{width:54px;height:54px;flex:none;clip-path:polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%);background:linear-gradient(135deg,#0f766e,#7c5cff);color:#fff;display:grid;place-items:center;font:700 22px 'Noto Serif Bengali',serif;object-fit:cover}
+.pz{display:grid;grid-template-columns:repeat(30,1fr);gap:2px;margin-top:10px}.pz i{height:8px;border-radius:2px;background:var(--ln)}.pz i.f{background:linear-gradient(var(--gold),#f59e0b)}
+.chs{display:flex;gap:8px;overflow-x:auto;margin-bottom:10px;padding-bottom:4px}button.ch{background:var(--sf);color:var(--tx);box-shadow:inset 0 0 0 1px var(--ln);white-space:nowrap;padding:6px 14px;font-size:14px}button.ch.on{background:linear-gradient(135deg,#0f766e,#7c5cff);color:#fff;box-shadow:none}
+.tg{display:flex;gap:6px}.tg button{background:var(--ln);color:var(--tx);box-shadow:none;padding:6px 12px}.tg button.p{background:var(--ok);color:#fff}.tg button.ab{background:var(--r);color:#fff}
+#sh{position:fixed;inset:0;background:rgba(8,12,30,.55);display:none;align-items:flex-end;z-index:9}#sh.o{display:flex}#sh>div{background:var(--bg);width:100%;max-height:92%;overflow:auto;border-radius:26px 26px 0 0;padding:16px;max-width:640px;margin:auto}
+.empty{text-align:center;color:var(--mu);padding:22px 8px}.log{font-size:14px;border-bottom:1px dashed var(--ln);padding:5px 0}.bd{font-size:12px;padding:1px 8px;border-radius:99px;background:var(--ln);color:var(--mu)}
 </style></head><body>
 <header><div class="bsm">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div><h1 id="ttl"></h1><p id="sub"></p></header><main id="m"></main>
 <nav id="nv"></nav><div id="sh" onclick="if(event.target==this)cl()"><div id="shc"></div></div>
 <script>
 const $=s=>document.querySelector(s),E=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const loc=()=>new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString();
-let D={name:'আমার মাদ্রাসা',pin:'',s:[],a:{},t:[]},tab='h',q='',mon=loc().slice(0,7),ad=loc().slice(0,10),ok=false;
+let D={name:'আমার মাদ্রাসা',pin:'',s:[],a:{},t:[],n:[],r:[],rn:0},tab='h',q='',cf='',mon=loc().slice(0,7),ad=loc().slice(0,10),ok=false,ex='প্রথম সাময়িক',SS={},SM='',AU='all',PH='';
 try{D=Object.assign(D,JSON.parse(localStorage.getItem('mdb')||'{}'))}catch(e){}
 const save=()=>{try{localStorage.setItem('mdb',JSON.stringify(D))}catch(e){}};
 const N=n=>Number(n||0).toLocaleString('bn-BD'),M=n=>'৳'+N(n),uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,5);
+const G={em:'#34d399,#0f9f78',sk:'#5eb0ff,#2f6fed',am:'#fcd34d,#f59e0b',ro:'#ff8fab,#ef476f',vi:'#a99bff,#6d5cff',te:'#5eead4,#0ea5a4'};
+const ic=(k,e)=>`<div class="ic" style="background:linear-gradient(135deg,${G[k]})">${e}</div>`;
 const CI=['মাসিক ফি','ভর্তি ফি','দান/চাঁদা','যাকাত/সদকা','অন্যান্য আয়'],CO=['শিক্ষকের বেতন','খাবার/বাজার','বিদ্যুৎ/পানি/গ্যাস','ভাড়া','কিতাব/সামগ্রী','মেরামত','অন্যান্য খরচ'];
+const act=()=>D.s.filter(s=>s.st!='x'),mn=()=>new Date().toLocaleDateString('bn-BD',{month:'long'});
 const paid=(id,m)=>D.t.filter(x=>x.sid==id&&x.cat=='মাসিক ফি'&&x.d.startsWith(m)).reduce((a,x)=>a+ +x.amt,0);
-const dues=m=>D.s.filter(s=>+s.f>0).map(s=>({s,due:s.f-paid(s.id,m)})).filter(x=>x.due>0);
+const dues=m=>act().filter(s=>+s.f>0).map(s=>({s,due:s.f-paid(s.id,m)})).filter(x=>x.due>0);
 const sum=(m,t)=>D.t.filter(x=>x.t==t&&x.d.startsWith(m)).reduce((a,x)=>a+ +x.amt,0);
-const sh=h=>{$('#shc').innerHTML=h;$('#sh').classList.add('o')},cl=()=>$('#sh').classList.remove('o');
-const go=t=>{tab=t;draw()};
+const sh=h=>{$('#shc').innerHTML=h;$('#sh').classList.add('o')},cl=()=>$('#sh').classList.remove('o'),go=t=>{cl();tab=t;draw();scrollTo(0,0)};
 const av=s=>s.ph?`<img class="av" src="${s.ph}" alt="">`:`<div class="av">${E((s.n||'?').trim().charAt(0))}</div>`;
+const pz=n=>'<div class="pz">'+Array.from({length:30},(_,i)=>`<i class="${i<n?'f':''}"></i>`).join('')+'</div>';
 const ap=id=>{const d=Object.values(D.a).filter(a=>a[id]!=null);return d.length?' · উপস্থিতি '+N(Math.round(d.filter(a=>a[id]==1).length/d.length*100))+'%':''};
 const lg=s=>(s.log||[]).slice(-6).reverse().map(l=>`<div class="log"><span class="mu">${new Date(l.d).toLocaleDateString('bn-BD')}</span> ${E(l.t)}</div>`).join('')||'<div class="mu">এখনো কিছু লেখা হয়নি</div>';
 function lgA(id){const s=D.s.find(x=>x.id==id),t=$('#lg').value.trim();if(!t)return;(s.log=s.log||[]).push({d:loc().slice(0,10),t});save();$('#lg').value='';$('#lgl').innerHTML=lg(s)}
-const pz=n=>'<div class="pz">'+Array.from({length:30},(_,i)=>`<i class="${i<n?'f':''}"></i>`).join('')+'</div>';
+const sms=(p,m)=>location.href='sms:'+p+'?body='+encodeURIComponent(m);
 function draw(){
- if(D.pin&&!ok){$('#ttl').textContent=D.name;$('#sub').textContent='প্রবেশ করুন';$('#nv').innerHTML='';$('#m').innerHTML='<div class="card"><label>পিন লিখুন</label><input id="pn" type="password" inputmode="numeric"><button onclick="if($(\'#pn\').value==D.pin){ok=true;draw()}else{alert(\'পিন ভুল হয়েছে\')}">খুলুন</button></div>';return}
- $('#ttl').textContent=D.name;$('#sub').textContent='আজ '+new Date().toLocaleDateString('bn-BD',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
- const T=[['h','🏠<br>হোম'],['s','👥<br>ছাত্র'],['p','✅<br>হাজিরা'],['k','📒<br>হিসাব'],['x','⚙️<br>আরও']];
- $('#nv').innerHTML=T.map(t=>`<button class="${tab==t[0]?'on':''}" onclick="go('${t[0]}')">${t[1]}</button>`).join('');
- $('#m').innerHTML={h:vHome,s:vStu,p:vAtt,k:vAcc,x:vMore}[tab]();
+ if(D.pin&&!ok){$('#ttl').textContent=D.name;$('#sub').textContent='প্রবেশ করুন';$('#nv').innerHTML='';$('#m').innerHTML='<div class="card"><label>পিন লিখুন</label><input id="pn" type="password" inputmode="numeric"><button onclick="if($(\'#pn\').value==D.pin){ok=true;draw()}else{alert(\'পিন ভুল\')}">খুলুন</button></div>';return}
+ $('#ttl').textContent=D.name;$('#sub').textContent=new Date().toLocaleDateString('bn-BD',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+ const T=[['h','🏠','হোম'],['s','👥','ছাত্র'],['p','✅','হাজিরা'],['k','📒','হিসাব'],['r','🏅','ফলাফল'],['x','⚙️','আরও']];
+ $('#nv').innerHTML=T.map(t=>`<button class="${tab==t[0]?'on':''}" onclick="go('${t[0]}')">${t[1]}<br>${t[2]}</button>`).join('');
+ $('#m').innerHTML={h:vHome,s:vStu,p:vAtt,k:vAcc,r:vRes,x:vMore}[tab]();
 }
+const nvL=l=>l.map(n=>`<div class="card row" onclick="nvF('${n.id}')"><div><span class="bd">${E(n.ty)}</span> <b>${E(n.t)}</b><div class="mu">${new Date(n.d).toLocaleDateString('bn-BD')} ${E(n.b).slice(0,60)}</div></div><span>›</span></div>`).join('');
 function vHome(){
- const m=loc().slice(0,7),dl=dues(m),dt=dl.reduce((a,x)=>a+x.due,0),a=D.a[loc().slice(0,10)]||{},pc=Object.values(a).filter(v=>v==1).length;
- return `<div class="grid"><div class="card"><div class="mu">মোট ছাত্র</div><div class="big">${N(D.s.length)}</div></div>
- <div class="card"><div class="mu">আজ উপস্থিত</div><div class="big">${N(pc)}/${N(D.s.length)}</div></div>
- <div class="card"><div class="mu">এ মাসে আয়</div><div class="big in">${M(sum(m,'in'))}</div></div>
- <div class="card"><div class="mu">এ মাসে খরচ</div><div class="big out">${M(sum(m,'out'))}</div></div></div>
- <div class="card hero"><div class="mu">এ মাসের সঞ্চয়</div><div class="big">${M(sum(m,'in')-sum(m,'out'))}</div></div>
- <h2>এ মাসের বাকি ফি (${M(dt)})</h2>
- ${dl.length?dl.map(x=>`<div class="card row"><div style="display:flex;gap:10px;align-items:center">${av(x.s)}<div><b>${E(x.s.n)}</b><div class="mu">${E(x.s.g)} · বাকি ${M(x.due)}</div></div></div><div class="tg">${x.s.p?`<a class="btn sm" style="background:transparent;color:var(--g);border:1.5px solid var(--g)" href="sms:${E(x.s.p)}?body=${encodeURIComponent('আসসালামু আলাইকুম, '+x.s.n+'-এর এ মাসের মাদ্রাসার ফি '+N(x.due)+' টাকা বাকি আছে। জাযাকাল্লাহু খাইরান।')}">SMS</a>`:''}<button class="sm" onclick="txF('in','${x.s.id}',${x.due})">ফি নিন</button></div></div>`).join(''):'<div class="empty">কোনো বাকি নেই, অথবা ছাত্রের মাসিক ফি দেওয়া হয়নি</div>'}
- ${D.s.length?'':'<div class="card"><b>শুরু করুন</b><p class="mu">প্রথমে “ছাত্র” ট্যাবে গিয়ে ছাত্র যোগ করুন।</p></div>'}`;
+ const m=loc().slice(0,7),td=loc().slice(0,10),A=act(),a=D.a[td]||{},pc=A.filter(s=>a[s.id]==1).length,ac=A.filter(s=>a[s.id]==0).length,dl=dues(m),dt=dl.reduce((x,y)=>x+y.due,0);
+ const S=[['মোট ছাত্র',N(D.s.length),'sk','👥'],['সক্রিয় ছাত্র',N(A.length),'em','✅'],['আজ উপস্থিত',N(pc),'te','🟢'],['আজ অনুপস্থিত',N(ac),'ro','🔴'],['এ মাসের আয়',M(sum(m,'in')),'am','💰'],['মোট বকেয়া',M(dt),'vi','⏳']];
+ const Q=[['➕','নতুন ভর্তি','stF()','em'],['✅','হাজিরা',"go('p')",'te'],['💵','ফি আদায়',"txF('in')",'am'],['🧾','খরচ',"txF('out')",'ro'],['💬','SMS পাঠান','smsC()','vi'],['📢','নোটিশ','nvF()','sk']];
+ return `<div class="grid pull">${S.map(x=>`<div class="st">${ic(x[2],x[3])}<div><div class="mu">${x[0]}</div><div class="big">${x[1]}</div></div></div>`).join('')}</div>
+ <div class="card fl" style="justify-content:space-between"><span class="mu">এ মাসের খরচ <b class="out">${M(sum(m,'out'))}</b></span><span class="mu">সঞ্চয় <b>${M(sum(m,'in')-sum(m,'out'))}</b></span></div>
+ <h2>দ্রুত কাজ</h2><div class="grid g3">${Q.map(x=>`<button class="tl" onclick="${x[2]}">${ic(x[3],x[0])}${x[1]}</button>`).join('')}</div>
+ <h2>সাম্প্রতিক নোটিশ</h2>${D.n.length?nvL(D.n.slice(-2).reverse()):'<div class="empty">কোনো নোটিশ নেই</div>'}
+ <div class="row"><h2>বাকি ফি (${M(dt)})</h2>${dl.length?'<button class="sm" onclick="smsC(\'আসসালামু আলাইকুম, {নাম}-এর {মাস} মাসের মাদ্রাসার ফি {বাকি} টাকা বাকি আছে। অনুগ্রহ করে পরিশোধ করুন। — \'+D.name,\'due\')">সবাইকে SMS</button>':''}</div>
+ ${dl.length?dl.slice(0,8).map(x=>`<div class="card row"><div class="fl">${av(x.s)}<div><b>${E(x.s.n)}</b><div class="mu">বাকি ${M(x.due)}</div></div></div><button class="sm" onclick="txF('in','${x.s.id}',${x.due})">ফি নিন</button></div>`).join(''):'<div class="empty">কোনো বাকি নেই</div>'}`;
 }
 function vStu(){
- const l=D.s.filter(s=>(s.n+s.g+s.p).includes(q)).sort((a,b)=>a.n.localeCompare(b.n,'bn'));
- return `<div class="row"><input placeholder="নাম/অভিভাবক/নম্বর খুঁজুন" value="${E(q)}" oninput="q=this.value;clearTimeout(window.tm);window.tm=setTimeout(()=>{draw();const i=$('#m input');i.focus();i.setSelectionRange(99,99)},300)"><button style="margin-bottom:7px;white-space:nowrap" onclick="stF()">+ নতুন</button></div>
- ${l.length?l.map(s=>`<div class="card"><div class="row" style="justify-content:flex-start;gap:12px" onclick="stF('${s.id}')">${av(s)}<div style="flex:1"><b class="nm">${E(s.n)}</b> <span class="mu">${E(s.c)}</span><div class="mu">অভিভাবক: ${E(s.g)}${ap(s.id)}</div></div><span class="mu">${N(s.para||0)}/৩০</span></div>
- ${pz(s.para||0)}${s.p?`<div style="margin-top:8px"><a class="btn sm" href="tel:${E(s.p)}">📞 ${E(s.p)}</a></div>`:''}</div>`).join(''):'<div class="empty">কোনো ছাত্র নেই। “+ নতুন” চাপুন।</div>'}`;
+ const cs=[...new Set(D.s.map(s=>s.c).filter(Boolean))],l=D.s.filter(s=>(!cf||s.c==cf)&&(s.n+s.g+s.p+(s.rl||'')).includes(q)).sort((a,b)=>(a.rl||999)-(b.rl||999)||a.n.localeCompare(b.n,'bn'));
+ return `<div class="row"><input placeholder="নাম/অভিভাবক/রোল/নম্বর" value="${E(q)}" oninput="q=this.value;clearTimeout(window.tm);window.tm=setTimeout(()=>{draw();const i=$('#m input');i.focus();i.setSelectionRange(99,99)},300)"><button style="margin-bottom:7px;white-space:nowrap" onclick="stF()">+ নতুন</button></div>
+ <div class="chs"><button class="ch ${cf?'':'on'}" onclick="cf='';draw()">সব (${N(D.s.length)})</button>${cs.map(c=>`<button class="ch ${cf==c?'on':''}" onclick="cf='${E(c)}';draw()">${E(c)}</button>`).join('')}</div>
+ ${l.length?l.map(s=>`<div class="card"><div class="fl" onclick="stF('${s.id}')">${av(s)}<div style="flex:1"><b>${E(s.n)}</b> ${s.st=='x'?'<span class="bd">নিষ্ক্রিয়</span>':''}<div class="mu">${s.rl?'রোল '+N(s.rl)+' · ':''}${E(s.c)}</div><div class="mu">অভিভাবক: ${E(s.g)}${ap(s.id)}</div></div><span class="mu">${N(s.para||0)}/৩০</span></div>${pz(s.para||0)}${s.p?`<div class="row" style="margin-top:8px"><a class="btn sm" href="tel:${E(s.p)}">📞 ${E(s.p)}</a><a class="btn sm alt" style="background:none;color:var(--g);box-shadow:inset 0 0 0 1.5px var(--g)" href="sms:${E(s.p)}">💬 SMS</a></div>`:''}</div>`).join(''):'<div class="empty">কোনো ছাত্র নেই। “+ নতুন” চাপুন।</div>'}`;
 }
-function stF(id){PH=(D.s.find(x=>x.id==id)||{}).ph||'';
- const s=D.s.find(x=>x.id==id)||{};
- sh(`<h2>${id?'ছাত্রের তথ্য':'নতুন ছাত্র'}</h2><div style="display:flex;gap:14px;align-items:center;margin-bottom:12px"><span id="pv">${av(s)}</span><div><button class="alt sm" onclick="$('#pf').click()">📷 ছবি দিন</button><input id="pf" type="file" accept="image/*" hidden onchange="phO(this)"></div></div><label>ছাত্রের নাম *</label><input id="a1" value="${E(s.n)}"><label>অভিভাবকের নাম</label><input id="a2" value="${E(s.g)}"><label>যোগাযোগ নম্বর</label><input id="a3" type="tel" value="${E(s.p)}"><label>ক্লাস/হালকা</label><input id="a4" value="${E(s.c)}"><label>ভর্তির তারিখ</label><input id="a5" type="date" value="${E(s.d||loc().slice(0,10))}"><label>মাসিক ফি (টাকা)</label><input id="a6" type="number" inputmode="numeric" value="${E(s.f)}"><label>হিফজ সম্পন্ন (পারা, ০-৩০)</label><input id="a7" type="number" min="0" max="30" value="${E(s.para||0)}"><label>ঠিকানা/নোট</label><input id="a8" value="${E(s.note)}">${id?`<h2>সবক-সবকি লেখা</h2><div class="row"><input id="lg" placeholder="যেমন: সবক ৩ পৃষ্ঠা, সবকি ভালো" style="margin:0"><button class="sm" onclick="lgA('${id}')">যোগ</button></div><div id="lgl" style="margin-bottom:12px">${lg(s)}</div>`:''}
+function phO(i){const f=i.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const c=document.createElement('canvas'),z=Math.min(im.width,im.height),S=200;c.width=c.height=S;c.getContext('2d').drawImage(im,(im.width-z)/2,(im.height-z)/2,z,z,0,0,S,S);PH=c.toDataURL('image/jpeg',.7);$('#pv').innerHTML=av({ph:PH})};im.src=r.result};r.readAsDataURL(f)}
+function stF(id){
+ const s=D.s.find(x=>x.id==id)||{};PH=s.ph||'';const cs=[...new Set(['প্রথম শ্রেণি','দ্বিতীয় শ্রেণি','তৃতীয় শ্রেণি','হিফজ বিভাগ',...D.s.map(x=>x.c)].filter(Boolean))];
+ sh(`<h2>${id?'ছাত্রের তথ্য':'নতুন ভর্তি'}</h2><div class="fl" style="margin-bottom:12px"><span id="pv">${av(s)}</span><div><button class="alt sm" onclick="$('#pf').click()">📷 ছবি দিন</button><input id="pf" type="file" accept="image/*" hidden onchange="phO(this)"></div></div>
+ <label>ছাত্রের নাম *</label><input id="a1" value="${E(s.n)}"><label>পিতা/অভিভাবকের নাম</label><input id="a2" value="${E(s.g)}"><label>অভিভাবকের মোবাইল নম্বর</label><input id="a3" type="tel" value="${E(s.p)}">
+ <div class="grid"><div><label>শ্রেণি</label><input id="a4" list="cl" value="${E(s.c)}"><datalist id="cl">${cs.map(c=>`<option>${E(c)}</option>`).join('')}</datalist></div><div><label>রোল নম্বর</label><input id="a9" type="number" value="${E(s.rl)}"></div><div><label>জন্মতারিখ</label><input id="a10" type="date" value="${E(s.b)}"></div><div><label>ভর্তির তারিখ</label><input id="a5" type="date" value="${E(s.d||loc().slice(0,10))}"></div><div><label>মাসিক ফি (টাকা)</label><input id="a6" type="number" value="${E(s.f)}"></div><div><label>হিফজ (পারা ০-৩০)</label><input id="a7" type="number" min="0" max="30" value="${E(s.para||0)}"></div></div>
+ <label>অবস্থা</label><select id="a11"><option value="a">সক্রিয়</option><option value="x" ${s.st=='x'?'selected':''}>নিষ্ক্রিয়</option></select><label>ঠিকানা/নোট</label><input id="a8" value="${E(s.note)}">
+ ${id?`<h2>সবক-সবকি লেখা</h2><div class="row"><input id="lg" placeholder="যেমন: সবক ৩ পৃষ্ঠা" style="margin:0"><button class="sm" onclick="lgA('${id}')">যোগ</button></div><div id="lgl" style="margin-bottom:12px">${lg(s)}</div>`:''}
  <div class="row"><button onclick="stS('${id||''}')">সংরক্ষণ</button>${id?`<button class="del" onclick="if(confirm('ছাত্র মুছবেন?')){D.s=D.s.filter(x=>x.id!='${id}');save();cl();draw()}">মুছুন</button>`:''}<button class="alt" onclick="cl()">বাতিল</button></div>`);
 }
 function stS(id){const n=$('#a1').value.trim();if(!n){alert('ছাত্রের নাম লিখুন');return}
- const o={id:id||uid(),n,g:$('#a2').value,p:$('#a3').value,c:$('#a4').value,d:$('#a5').value,f:$('#a6').value,para:Math.min(30,Math.max(0,+$('#a7').value||0)),note:$('#a8').value,ph:PH,log:(D.s.find(x=>x.id==id)||{}).log||[]};
+ const o={id:id||uid(),n,g:$('#a2').value,p:$('#a3').value,c:$('#a4').value,d:$('#a5').value,f:$('#a6').value,para:Math.min(30,Math.max(0,+$('#a7').value||0)),note:$('#a8').value,rl:$('#a9').value,b:$('#a10').value,st:$('#a11').value,ph:PH,log:(D.s.find(x=>x.id==id)||{}).log||[]};
  const i=D.s.findIndex(x=>x.id==id);i>=0?D.s[i]=o:D.s.push(o);save();cl();draw()}
-let PH='';function phO(i){const f=i.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const c=document.createElement('canvas'),z=Math.min(im.width,im.height),S=200;c.width=c.height=S;c.getContext('2d').drawImage(im,(im.width-z)/2,(im.height-z)/2,z,z,0,0,S,S);PH=c.toDataURL('image/jpeg',.7);$('#pv').innerHTML=av({ph:PH})};im.src=r.result};r.readAsDataURL(f)}
 function vAtt(){
- const a=D.a[ad]||{},pc=D.s.filter(s=>a[s.id]==1).length,ac=D.s.filter(s=>a[s.id]==0).length;
- return `<label>তারিখ</label><input type="date" value="${ad}" onchange="ad=this.value;draw()">
- <div class="card row"><span>উপস্থিত <b class="in">${N(pc)}</b></span><span>অনুপস্থিত <b class="out">${N(ac)}</b></span><button class="sm alt" onclick="allP()">সবাই উপস্থিত</button></div>
- ${D.s.length?D.s.map(s=>`<div class="card row"><div style="display:flex;gap:10px;align-items:center">${av(s)}<b>${E(s.n)}</b></div><div class="tg"><button class="${a[s.id]==1?'p':''}" onclick="mk('${s.id}',1)">উপস্থিত</button><button class="${a[s.id]==0?'ab':''}" onclick="mk('${s.id}',0)">অনুপস্থিত</button></div></div>`).join(''):'<div class="empty">আগে ছাত্র যোগ করুন</div>'}`;
+ const A=act(),a=D.a[ad]||{},pc=A.filter(s=>a[s.id]==1).length,ac=A.filter(s=>a[s.id]==0).length;
+ return `<label>তারিখ</label><input type="date" value="${ad}" onchange="ad=this.value;draw()"><div class="card row"><span>উপস্থিত <b class="in">${N(pc)}</b></span><span>অনুপস্থিত <b class="out">${N(ac)}</b></span><button class="sm alt" onclick="allP()">সবাই উপস্থিত</button></div>
+ ${A.length?A.map(s=>`<div class="card row"><div class="fl">${av(s)}<b>${E(s.n)}</b></div><div class="tg"><button class="${a[s.id]==1?'p':''}" onclick="mk('${s.id}',1)">উপস্থিত</button><button class="${a[s.id]==0?'ab':''}" onclick="mk('${s.id}',0)">অনুপস্থিত</button></div></div>`).join(''):'<div class="empty">আগে ছাত্র যোগ করুন</div>'}`;
 }
-const mk=(id,v)=>{D.a[ad]=D.a[ad]||{};D.a[ad][id]=v;save();const y=scrollY;draw();scrollTo(0,y)};
-const allP=()=>{D.a[ad]={};D.s.forEach(s=>D.a[ad][s.id]=1);save();draw()};
+const mk=(id,v)=>{D.a[ad]=D.a[ad]||{};D.a[ad][id]=v;save();const y=scrollY;draw();scrollTo(0,y)},allP=()=>{D.a[ad]={};act().forEach(s=>D.a[ad][s.id]=1);save();draw()};
 function vAcc(){
  const l=D.t.filter(x=>x.d.startsWith(mon)).sort((a,b)=>b.d.localeCompare(a.d)),i=sum(mon,'in'),o=sum(mon,'out');
- return `<label>মাস</label><input type="month" value="${mon}" onchange="mon=this.value;draw()">
- <div class="grid"><div class="card"><div class="mu">আয়</div><div class="big in">${M(i)}</div></div><div class="card"><div class="mu">খরচ</div><div class="big out">${M(o)}</div></div></div>
- <div class="card row"><span>অবশিষ্ট</span><b class="big">${M(i-o)}</b></div>
- <div class="row" style="margin:10px 0"><button style="flex:1" onclick="txF('in')">+ আয়</button><button class="del" style="flex:1" onclick="txF('out')">+ খরচ</button></div>
- ${l.length?l.map(x=>{const s=D.s.find(y=>y.id==x.sid);return `<div class="card row" onclick="txF('${x.t}','','', '${x.id}')"><div><b>${E(x.cat)}</b>${s?' · '+E(s.n):''}<div class="mu">${new Date(x.d).toLocaleDateString('bn-BD')}${x.note?' · '+E(x.note):''}</div></div><b class="${x.t}">${x.t=='in'?'+':'−'}${M(x.amt)}</b></div>`}).join(''):'<div class="empty">এ মাসে কোনো হিসাব নেই</div>'}`;
+ return `<label>মাস</label><input type="month" value="${mon}" onchange="mon=this.value;draw()"><div class="grid"><div class="st">${ic('em','⬇️')}<div><div class="mu">আয়</div><div class="big in">${M(i)}</div></div></div><div class="st">${ic('ro','⬆️')}<div><div class="mu">খরচ</div><div class="big out">${M(o)}</div></div></div></div>
+ <div class="card row"><span>অবশিষ্ট</span><b class="big">${M(i-o)}</b></div><div class="row" style="margin:10px 0"><button style="flex:1" onclick="txF('in')">+ আয়</button><button class="del" style="flex:1" onclick="txF('out')">+ খরচ</button></div>
+ ${l.length?l.map(x=>{const s=D.s.find(y=>y.id==x.sid);return `<div class="card row" onclick="txF('${x.t}','','','${x.id}')"><div><b>${E(x.cat)}</b>${s?' · '+E(s.n):''}${x.rno?' <span class="bd">রসিদ '+N(x.rno)+'</span>':''}<div class="mu">${new Date(x.d).toLocaleDateString('bn-BD')}${x.note?' · '+E(x.note):''}</div></div><b class="${x.t}">${x.t=='in'?'+':'−'}${M(x.amt)}</b></div>`}).join(''):'<div class="empty">এ মাসে কোনো হিসাব নেই</div>'}`;
 }
 function txF(t,sid,amt,id){
- const x=D.t.find(y=>y.id==id)||{t,sid:sid||'',amt:amt||'',cat:sid?'মাসিক ফি':'',d:loc().slice(0,10),note:''};t=x.t;
+ const x=D.t.find(y=>y.id==id)||{t,sid:sid||'',amt:amt||'',cat:sid?'মাসিক ফি':'',d:loc().slice(0,10),note:''};t=x.t;const s=D.s.find(y=>y.id==x.sid);
  sh(`<h2>${id?'হিসাব সম্পাদনা':t=='in'?'নতুন আয়':'নতুন খরচ'}</h2><label>ধরন</label><select id="b1" onchange="$('#b5w').style.display=this.value=='মাসিক ফি'?'block':'none'">${(t=='in'?CI:CO).map(c=>`<option ${c==x.cat?'selected':''}>${c}</option>`).join('')}</select>
- <div id="b5w" style="display:${t=='in'&&(x.cat=='মাসিক ফি'||!x.cat)?'block':'none'}"><label>কোন ছাত্রের ফি</label><select id="b5"><option value="">—</option>${D.s.map(s=>`<option value="${s.id}" ${s.id==x.sid?'selected':''}>${E(s.n)}</option>`).join('')}</select></div>
+ <div id="b5w" style="display:${t=='in'&&(x.cat=='মাসিক ফি'||!x.cat)?'block':'none'}"><label>কোন ছাত্রের ফি</label><select id="b5"><option value="">—</option>${act().map(s=>`<option value="${s.id}" ${s.id==x.sid?'selected':''}>${E(s.n)}</option>`).join('')}</select></div>
  <label>টাকার পরিমাণ</label><input id="b2" type="number" inputmode="numeric" value="${E(x.amt)}"><label>তারিখ</label><input id="b3" type="date" value="${x.d}"><label>নোট</label><input id="b4" value="${E(x.note)}">
+ ${id&&x.rno&&s&&s.p?`<button class="alt" style="margin-bottom:12px" onclick="rcS('${id}')">🧾 রসিদ ${N(x.rno)} SMS করুন</button>`:''}
  <div class="row"><button onclick="txS('${t}','${id||''}')">সংরক্ষণ</button>${id?`<button class="del" onclick="if(confirm('মুছবেন?')){D.t=D.t.filter(y=>y.id!='${id}');save();cl();draw()}">মুছুন</button>`:''}<button class="alt" onclick="cl()">বাতিল</button></div>`);
 }
 function txS(t,id){const a=+$('#b2').value;if(!a){alert('টাকার পরিমাণ লিখুন');return}
- const c=$('#b1').value,o={id:id||uid(),t,cat:c,amt:a,d:$('#b3').value,note:$('#b4').value,sid:c=='মাসিক ফি'?$('#b5').value:''};
- const i=D.t.findIndex(x=>x.id==id);i>=0?D.t[i]=o:D.t.push(o);save();cl();draw()}
+ const c=$('#b1').value,old=D.t.find(x=>x.id==id)||{},o={id:id||uid(),t,cat:c,amt:a,d:$('#b3').value,note:$('#b4').value,sid:c=='মাসিক ফি'?$('#b5').value:'',rno:old.rno};
+ if(t=='in'&&(c=='মাসিক ফি'||c=='ভর্তি ফি')&&!o.rno)o.rno=++D.rn;
+ const i=D.t.findIndex(x=>x.id==id);i>=0?D.t[i]=o:D.t.push(o);save();cl();draw();
+ if(o.rno&&o.sid&&!id){const s=D.s.find(y=>y.id==o.sid);if(s&&s.p&&confirm('অভিভাবককে রসিদ SMS পাঠাবেন?'))rcS(o.id)}}
+function rcS(id){const x=D.t.find(y=>y.id==id),s=D.s.find(y=>y.id==x.sid);sms(s.p,`রসিদ নং ${N(x.rno)}: ${s.n}-এর ${x.cat} ${N(x.amt)} টাকা গ্রহণ করা হয়েছে। ধন্যবাদ। — ${D.name}`)}
+const GR=p=>p>=80?'A+':p>=70?'A':p>=60?'A-':p>=50?'B':p>=40?'C':p>=33?'D':'F';
+function vRes(){
+ return `<div class="chs">${['প্রথম সাময়িক','দ্বিতীয় সাময়িক','বার্ষিক'].map(e=>`<button class="ch ${e==ex?'on':''}" onclick="ex='${e}';draw()">${e}</button>`).join('')}</div>
+ ${act().map(s=>{const r=D.r.filter(x=>x.sid==s.id&&x.ex==ex),t=r.reduce((a,x)=>a+ +x.m,0),f=r.reduce((a,x)=>a+ +x.f,0),p=f?t/f*100:0;return `<div class="card row" onclick="rsF('${s.id}')"><div class="fl">${av(s)}<div><b>${E(s.n)}</b><div class="mu">${r.length?N(t)+'/'+N(f)+' · গড় '+N(Math.round(p))+'%':'নম্বর দিন'}</div></div></div>${r.length?`<div class="big" style="color:${p>=33?'var(--ok)':'var(--r)'}">${GR(p)}</div>`:'<span>›</span>'}</div>`}).join('')||'<div class="empty">আগে ছাত্র যোগ করুন</div>'}`;
+}
+function rsF(sid){
+ const s=D.s.find(x=>x.id==sid),r=D.r.filter(x=>x.sid==sid&&x.ex==ex),t=r.reduce((a,x)=>a+ +x.m,0),f=r.reduce((a,x)=>a+ +x.f,0),p=f?t/f*100:0;
+ sh(`<h2>${E(s.n)} · ${ex}</h2>${r.map(x=>`<div class="card row"><span>${E(x.sub)}</span><span><b>${N(x.m)}</b>/${N(x.f)} <button class="sm del" onclick="D.r=D.r.filter(y=>y.id!='${x.id}');save();rsF('${sid}');draw()">×</button></span></div>`).join('')}
+ ${r.length?`<div class="card row"><b>মোট ${N(t)}/${N(f)}</b><b>গড় ${N(Math.round(p))}% · গ্রেড ${GR(p)}</b></div>`:''}
+ <label>বিষয়</label><input id="c1" list="sb"><datalist id="sb">${['বাংলা','ইংরেজি','গণিত','আরবি','কুরআন','ইসলামিয়াত'].map(x=>`<option>${x}</option>`).join('')}</datalist>
+ <div class="grid"><div><label>প্রাপ্ত নম্বর</label><input id="c2" type="number"></div><div><label>পূর্ণ নম্বর</label><input id="c3" type="number" value="100"></div></div>
+ <div class="row"><button onclick="rsA('${sid}')">বিষয় যোগ</button><button class="alt" onclick="cl()">বন্ধ</button></div>`);
+}
+function rsA(sid){const b=$('#c1').value.trim(),m=+$('#c2').value,f=+$('#c3').value;if(!b||isNaN(m)||!f||m>f||$('#c2').value===''){alert('নম্বর সঠিক নয়');return}D.r.push({id:uid(),sid,ex,sub:b,m,f});save();rsF(sid);draw()}
+function nvF(id){
+ const n=D.n.find(x=>x.id==id)||{ty:'সাধারণ',t:'',b:''};
+ sh(`<h2>${id?'নোটিশ':'নতুন নোটিশ'}</h2><label>ধরন</label><select id="d1">${['সাধারণ','ছুটি','পরীক্ষা','অভিভাবক সভা','জরুরি বিজ্ঞপ্তি'].map(x=>`<option ${x==n.ty?'selected':''}>${x}</option>`).join('')}</select><label>শিরোনাম</label><input id="d2" value="${E(n.t)}"><label>বিস্তারিত</label><textarea id="d3" rows="3">${E(n.b)}</textarea>
+ <div class="row"><button onclick="nvS('${id||''}')">সংরক্ষণ</button>${id?`<button class="alt" onclick="nvM('${id}')">💬 সবাইকে SMS</button><button class="del" onclick="D.n=D.n.filter(x=>x.id!='${id}');save();cl();draw()">মুছুন</button>`:''}</div>`);
+}
+function nvS(id){const t=$('#d2').value.trim();if(!t){alert('শিরোনাম লিখুন');return}const o={id:id||uid(),ty:$('#d1').value,t,b:$('#d3').value,d:loc().slice(0,10)};const i=D.n.findIndex(x=>x.id==id);i>=0?D.n[i]=o:D.n.push(o);save();cl();draw()}
+function nvM(id){const n=D.n.find(x=>x.id==id);smsC(`${n.ty}: ${n.t}। ${n.b} — ${D.name}`,'all')}
+const rcp=()=>{const dm={};dues(loc().slice(0,7)).forEach(x=>dm[x.s.id]=x.due);return act().filter(s=>s.p&&(AU=='all'||(AU=='due'?dm[s.id]:s.c==AU))).map(s=>({s,due:dm[s.id]||0}))};
+const mg=x=>SM.replace(/\{নাম\}/g,x.s.n).replace(/\{বাকি\}/g,N(x.due)).replace(/\{মাস\}/g,mn()),lk=x=>'sms:'+x.s.p+'?body='+encodeURIComponent(mg(x));
+function rlH(){const R=rcp();return `<div class="mu" style="margin:6px 0">${N(R.length)} জন · পাঠানো হয়েছে ${N(R.filter(x=>SS[x.s.id]).length)}</div>`+R.map(x=>`<div class="row" style="padding:6px 0;border-bottom:1px solid var(--ln)"><span>${SS[x.s.id]?'✅':'⚪'} ${E(x.s.n)}${x.due?' <span class="mu">বাকি '+M(x.due)+'</span>':''}</span><a class="btn sm" href="${lk(x)}" onclick="SS['${x.s.id}']=1;setTimeout(()=>$('#rl').innerHTML=rlH(),500)">SMS</a></div>`).join('')}
+function nxt(){const x=rcp().find(x=>!SS[x.s.id]);if(!x){alert('সবাইকে পাঠানো হয়েছে');return}SS[x.s.id]=1;$('#rl').innerHTML=rlH();location.href=lk(x)}
+function smsC(m,a){if(m)SM=m;if(a)AU=a;if(!SM)SM='আসসালামু আলাইকুম, {নাম}-এর অভিভাবক। — '+D.name;
+ const cs=[...new Set(act().map(s=>s.c).filter(Boolean))];
+ sh(`<h2>অভিভাবকদের SMS</h2><label>কাদের পাঠাবেন</label><select onchange="AU=this.value;$('#rl').innerHTML=rlH()"><option value="all" ${AU=='all'?'selected':''}>সব অভিভাবক</option><option value="due" ${AU=='due'?'selected':''}>যাদের ফি বাকি</option>${cs.map(c=>`<option ${AU==c?'selected':''}>${E(c)}</option>`).join('')}</select>
+ <div class="chs"><button class="ch" onclick="SM='আসসালামু আলাইকুম, {নাম}-এর {মাস} মাসের মাদ্রাসার ফি {বাকি} টাকা বাকি আছে। অনুগ্রহ করে পরিশোধ করুন। — '+D.name;AU='due';smsC()">ফি তাগাদা</button><button class="ch" onclick="SM='আসসালামু আলাইকুম, {নাম}-এর অভিভাবক। আগামীকাল মাদ্রাসা ছুটি থাকবে। — '+D.name;smsC()">ছুটি</button><button class="ch" onclick="SM='আসসালামু আলাইকুম, অভিভাবক সভা অনুষ্ঠিত হবে। উপস্থিত থাকার অনুরোধ। — '+D.name;smsC()">সভা</button></div>
+ <label>বার্তা ({নাম} {বাকি} {মাস} নিজে বসে যাবে)</label><textarea rows="4" oninput="SM=this.value;$('#rl').innerHTML=rlH()">${E(SM)}</textarea>
+ <div class="row"><button onclick="nxt()">পরেরজনকে পাঠান ▶</button><button class="alt sm" onclick="SS={};$('#rl').innerHTML=rlH()">আবার শুরু</button></div><p class="mu">প্রতিবার মেসেজ অ্যাপ খুলবে, “Send” চেপে ফিরে এসে আবার “পরেরজনকে পাঠান” চাপুন। প্রতিজনের কাছে আলাদা বার্তা যায়।</p><div id="rl">${rlH()}</div>`);
+}
 function vMore(){
- return `<div class="card"><label>প্রতিষ্ঠানের নাম</label><input value="${E(D.name)}" onchange="D.name=this.value;save();draw()"><label>পিন (খালি রাখলে লক থাকবে না)</label><input type="password" inputmode="numeric" value="${E(D.pin)}" onchange="D.pin=this.value;save();ok=true;alert('পিন সংরক্ষিত হয়েছে')"></div>
- <div class="card"><b>ব্যাকআপ</b><p class="mu">ফোন বদল বা হারানোর আগে ব্যাকআপ কপি করে WhatsApp/Notes-এ সেভ রাখুন।</p><button onclick="bk()">ব্যাকআপ কপি করুন</button>
- <p><label>পুনরুদ্ধার: ব্যাকআপ টেক্সট এখানে বসান</label><textarea id="rs" rows="3"></textarea><button class="alt" onclick="rsT()">পুনরুদ্ধার করুন</button></p></div>
- <div class="card"><button class="del" onclick="if(confirm('সব তথ্য মুছে যাবে। নিশ্চিত?')){D={name:'আমার মাদ্রাসা',pin:'',s:[],a:{},t:[]};save();draw()}">সব তথ্য মুছুন</button></div>`;
+ const Q=[['💬','অভিভাবক SMS','smsC()','vi'],['📢','নোটিশ','nvF()','sk'],['🏅','ফলাফল',"go('r')",'am']];
+ return `<div class="grid g3">${Q.map(x=>`<button class="tl" onclick="${x[2]}">${ic(x[3],x[0])}${x[1]}</button>`).join('')}</div>
+ <h2>সব নোটিশ</h2>${D.n.length?nvL(D.n.slice().reverse()):'<div class="empty">কোনো নোটিশ নেই</div>'}
+ <h2>সেটিংস</h2><div class="card"><label>প্রতিষ্ঠানের নাম</label><input value="${E(D.name)}" onchange="D.name=this.value;save();draw()"><label>পিন (খালি রাখলে লক থাকবে না)</label><input type="password" inputmode="numeric" value="${E(D.pin)}" onchange="D.pin=this.value;save();ok=true;alert('পিন সংরক্ষিত')"></div>
+ <div class="card"><b>ব্যাকআপ</b><p class="mu">ফোন বদলানোর আগে ব্যাকআপ কপি করে WhatsApp/Notes-এ রাখুন।</p><button onclick="bk()">ব্যাকআপ কপি করুন</button><p><label>পুনরুদ্ধার: ব্যাকআপ টেক্সট বসান</label><textarea id="rs" rows="3"></textarea><button class="alt" onclick="rsT()">পুনরুদ্ধার করুন</button></p></div>
+ <div class="card"><button class="del" onclick="if(confirm('সব তথ্য মুছে যাবে। নিশ্চিত?')){D={name:'আমার মাদ্রাসা',pin:'',s:[],a:{},t:[],n:[],r:[],rn:0};save();draw()}">সব তথ্য মুছুন</button></div>`;
 }
 function bk(){const t=JSON.stringify(D);try{navigator.clipboard.writeText(t).then(()=>alert('ব্যাকআপ কপি হয়েছে'),f)}catch(e){f()}
- function f(){sh('<h2>ব্যাকআপ</h2><p class="mu">নিচের লেখা সব সিলেক্ট করে কপি করুন</p><textarea rows="8" onfocus="this.select()">'+E(t)+'</textarea><button onclick="cl()">বন্ধ</button>')}}
+ function f(){sh('<h2>ব্যাকআপ</h2><textarea rows="8" onfocus="this.select()">'+E(t)+'</textarea><button onclick="cl()">বন্ধ</button>')}}
 function rsT(){try{const o=JSON.parse($('#rs').value);if(!Array.isArray(o.s)||!Array.isArray(o.t))throw 0;if(confirm('বর্তমান তথ্য বদলে যাবে। নিশ্চিত?')){D=Object.assign(D,o);save();draw()}}catch(e){alert('ব্যাকআপ টেক্সট সঠিক নয়')}}
 draw();
 if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
