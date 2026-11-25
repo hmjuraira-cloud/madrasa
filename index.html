@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="bn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#0b3b35"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><title>মাদ্রাসা ব্যবস্থাপনা</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@600;700&family=Amiri&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef3f1;--sf:#fff;--tx:#14201c;--mu:#5d6b66;--g:#0f5c4d;--on:#fff;--a:#b8821f;--ln:#d5dfdb;--r:#b83227;--ok:#1e7a4f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f1816;--sf:#18241f;--tx:#e8f0ec;--mu:#98a8a1;--g:#3fb597;--on:#06201a;--a:#e0b050;--ln:#2a3a34;--r:#ef7a6c;--ok:#5cc58f}}
+:root[data-theme=dark]{--bg:#0f1816;--sf:#18241f;--tx:#e8f0ec;--mu:#98a8a1;--g:#3fb597;--on:#06201a;--a:#e0b050;--ln:#2a3a34;--r:#ef7a6c;--ok:#5cc58f}
+*{box-sizing:border-box}html,body{margin:0}body{background:var(--bg);color:var(--tx);font:16px/1.5 'Hind Siliguri',system-ui,sans-serif;padding-bottom:76px}
+header{background:var(--g);color:var(--on);padding:16px 18px}header h1{margin:0;font-size:20px}header p{margin:0;opacity:.85;font-size:14px}
+main{padding:14px;max-width:640px;margin:auto}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:12px;padding:12px 14px;margin-bottom:10px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.big{font-size:26px;font-weight:700;line-height:1.2}.mu{color:var(--mu);font-size:14px}
+.in{color:var(--ok)}.out{color:var(--r)}
+h2{font-size:17px;margin:16px 0 8px}
+button,.btn{font:inherit;background:var(--g);color:var(--on);border:0;border-radius:10px;padding:9px 14px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block}
+button.alt{background:transparent;color:var(--g);border:1.5px solid var(--g)}button.del{background:var(--r);color:#fff}button.sm{padding:5px 10px;font-size:14px}
+input,select,textarea{font:inherit;width:100%;padding:10px;border:1px solid var(--ln);border-radius:10px;background:var(--sf);color:var(--tx);margin:3px 0 10px}
+label{font-size:14px;color:var(--mu)}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--sf);border-top:1px solid var(--ln);display:flex;padding-bottom:env(safe-area-inset-bottom,0px)}
+nav button{flex:1;background:none;color:var(--mu);border-radius:0;padding:10px 2px;font-size:13px}nav button.on{color:var(--g);box-shadow:inset 0 3px 0 var(--g)}
+.bar{height:6px;background:var(--ln);border-radius:4px;overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;background:var(--a)}
+#sh{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:flex-end;z-index:9}#sh.o{display:flex}
+#sh>div{background:var(--bg);width:100%;max-height:92%;overflow:auto;border-radius:16px 16px 0 0;padding:16px;max-width:640px;margin:auto}
+.tg{display:flex;gap:6px}.tg button{background:var(--ln);color:var(--tx);padding:6px 12px}.tg button.p{background:var(--ok);color:#fff}.tg button.ab{background:var(--r);color:#fff}
+.empty{text-align:center;color:var(--mu);padding:24px 8px}
+header{background:#0b3b35 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cg fill='none' stroke='%23d4a63a' stroke-opacity='.3'%3E%3Crect x='10' y='10' width='28' height='28'/%3E%3Crect x='10' y='10' width='28' height='28' transform='rotate(45 24 24)'/%3E%3C/g%3E%3C/svg%3E");color:#f3e6bf;padding:24px 18px 28px;border-bottom:4px solid #d4a63a}
+header h1{font:700 26px 'Noto Serif Bengali','Hind Siliguri',serif;color:#f6d77e}header p{color:#d9e6e0}
+.card{border-radius:6px 20px 6px 20px;box-shadow:0 1px 0 var(--ln)}
+.big,h2{font-family:'Noto Serif Bengali','Hind Siliguri',serif}h2{color:var(--g);border-right:0;border-left:4px solid #d4a63a;padding-left:8px}
+.hero{background:#0b3b35;color:#f6d77e;border-color:#d4a63a}.hero .mu{color:#d9c58a}
+.av{width:54px;height:54px;flex:none;clip-path:polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%);background:#0b3b35;color:#f6d77e;display:grid;place-items:center;font:700 22px 'Noto Serif Bengali',serif;object-fit:cover}
+.pz{display:grid;grid-template-columns:repeat(30,1fr);gap:2px;margin-top:10px}.pz i{height:9px;border-radius:2px;background:var(--ln)}.pz i.f{background:#d4a63a}
+button{border-radius:999px}nav{border-top:3px solid #d4a63a}nav button{line-height:1.3;font-size:12px}nav button.on{box-shadow:none;color:var(--g);font-weight:700;background:rgba(212,166,58,.18)}
+.nm{font-size:17px}.bsm{font:400 24px Amiri,serif;color:#d4a63a;text-align:center;direction:rtl;margin-bottom:6px}header h1,header p{text-align:center}.log{font-size:14px;border-bottom:1px dashed var(--ln);padding:5px 0}.card:active{transform:scale(.985)}
+</style></head><body>
+<header><div class="bsm">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div><h1 id="ttl"></h1><p id="sub"></p></header><main id="m"></main>
+<nav id="nv"></nav><div id="sh" onclick="if(event.target==this)cl()"><div id="shc"></div></div>
+<script>
+const $=s=>document.querySelector(s),E=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const loc=()=>new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString();
+let D={name:'আমার মাদ্রাসা',pin:'',s:[],a:{},t:[]},tab='h',q='',mon=loc().slice(0,7),ad=loc().slice(0,10),ok=false;
+try{D=Object.assign(D,JSON.parse(localStorage.getItem('mdb')||'{}'))}catch(e){}
+const save=()=>{try{localStorage.setItem('mdb',JSON.stringify(D))}catch(e){}};
+const N=n=>Number(n||0).toLocaleString('bn-BD'),M=n=>'৳'+N(n),uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,5);
+const CI=['মাসিক ফি','ভর্তি ফি','দান/চাঁদা','যাকাত/সদকা','অন্যান্য আয়'],CO=['শিক্ষকের বেতন','খাবার/বাজার','বিদ্যুৎ/পানি/গ্যাস','ভাড়া','কিতাব/সামগ্রী','মেরামত','অন্যান্য খরচ'];
+const paid=(id,m)=>D.t.filter(x=>x.sid==id&&x.cat=='মাসিক ফি'&&x.d.startsWith(m)).reduce((a,x)=>a+ +x.amt,0);
+const dues=m=>D.s.filter(s=>+s.f>0).map(s=>({s,due:s.f-paid(s.id,m)})).filter(x=>x.due>0);
+const sum=(m,t)=>D.t.filter(x=>x.t==t&&x.d.startsWith(m)).reduce((a,x)=>a+ +x.amt,0);
+const sh=h=>{$('#shc').innerHTML=h;$('#sh').classList.add('o')},cl=()=>$('#sh').classList.remove('o');
+const go=t=>{tab=t;draw()};
+const av=s=>s.ph?`<img class="av" src="${s.ph}" alt="">`:`<div class="av">${E((s.n||'?').trim().charAt(0))}</div>`;
+const ap=id=>{const d=Object.values(D.a).filter(a=>a[id]!=null);return d.length?' · উপস্থিতি '+N(Math.round(d.filter(a=>a[id]==1).length/d.length*100))+'%':''};
+const lg=s=>(s.log||[]).slice(-6).reverse().map(l=>`<div class="log"><span class="mu">${new Date(l.d).toLocaleDateString('bn-BD')}</span> ${E(l.t)}</div>`).join('')||'<div class="mu">এখনো কিছু লেখা হয়নি</div>';
+function lgA(id){const s=D.s.find(x=>x.id==id),t=$('#lg').value.trim();if(!t)return;(s.log=s.log||[]).push({d:loc().slice(0,10),t});save();$('#lg').value='';$('#lgl').innerHTML=lg(s)}
+const pz=n=>'<div class="pz">'+Array.from({length:30},(_,i)=>`<i class="${i<n?'f':''}"></i>`).join('')+'</div>';
+function draw(){
+ if(D.pin&&!ok){$('#ttl').textContent=D.name;$('#sub').textContent='প্রবেশ করুন';$('#nv').innerHTML='';$('#m').innerHTML='<div class="card"><label>পিন লিখুন</label><input id="pn" type="password" inputmode="numeric"><button onclick="if($(\'#pn\').value==D.pin){ok=true;draw()}else{alert(\'পিন ভুল হয়েছে\')}">খুলুন</button></div>';return}
+ $('#ttl').textContent=D.name;$('#sub').textContent='আজ '+new Date().toLocaleDateString('bn-BD',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+ const T=[['h','🏠<br>হোম'],['s','👥<br>ছাত্র'],['p','✅<br>হাজিরা'],['k','📒<br>হিসাব'],['x','⚙️<br>আরও']];
+ $('#nv').innerHTML=T.map(t=>`<button class="${tab==t[0]?'on':''}" onclick="go('${t[0]}')">${t[1]}</button>`).join('');
+ $('#m').innerHTML={h:vHome,s:vStu,p:vAtt,k:vAcc,x:vMore}[tab]();
+}
+function vHome(){
+ const m=loc().slice(0,7),dl=dues(m),dt=dl.reduce((a,x)=>a+x.due,0),a=D.a[loc().slice(0,10)]||{},pc=Object.values(a).filter(v=>v==1).length;
+ return `<div class="grid"><div class="card"><div class="mu">মোট ছাত্র</div><div class="big">${N(D.s.length)}</div></div>
+ <div class="card"><div class="mu">আজ উপস্থিত</div><div class="big">${N(pc)}/${N(D.s.length)}</div></div>
+ <div class="card"><div class="mu">এ মাসে আয়</div><div class="big in">${M(sum(m,'in'))}</div></div>
+ <div class="card"><div class="mu">এ মাসে খরচ</div><div class="big out">${M(sum(m,'out'))}</div></div></div>
+ <div class="card hero"><div class="mu">এ মাসের সঞ্চয়</div><div class="big">${M(sum(m,'in')-sum(m,'out'))}</div></div>
+ <h2>এ মাসের বাকি ফি (${M(dt)})</h2>
+ ${dl.length?dl.map(x=>`<div class="card row"><div style="display:flex;gap:10px;align-items:center">${av(x.s)}<div><b>${E(x.s.n)}</b><div class="mu">${E(x.s.g)} · বাকি ${M(x.due)}</div></div></div><div class="tg">${x.s.p?`<a class="btn sm" style="background:transparent;color:var(--g);border:1.5px solid var(--g)" href="sms:${E(x.s.p)}?body=${encodeURIComponent('আসসালামু আলাইকুম, '+x.s.n+'-এর এ মাসের মাদ্রাসার ফি '+N(x.due)+' টাকা বাকি আছে। জাযাকাল্লাহু খাইরান।')}">SMS</a>`:''}<button class="sm" onclick="txF('in','${x.s.id}',${x.due})">ফি নিন</button></div></div>`).join(''):'<div class="empty">কোনো বাকি নেই, অথবা ছাত্রের মাসিক ফি দেওয়া হয়নি</div>'}
+ ${D.s.length?'':'<div class="card"><b>শুরু করুন</b><p class="mu">প্রথমে “ছাত্র” ট্যাবে গিয়ে ছাত্র যোগ করুন।</p></div>'}`;
+}
+function vStu(){
+ const l=D.s.filter(s=>(s.n+s.g+s.p).includes(q)).sort((a,b)=>a.n.localeCompare(b.n,'bn'));
+ return `<div class="row"><input placeholder="নাম/অভিভাবক/নম্বর খুঁজুন" value="${E(q)}" oninput="q=this.value;clearTimeout(window.tm);window.tm=setTimeout(()=>{draw();const i=$('#m input');i.focus();i.setSelectionRange(99,99)},300)"><button style="margin-bottom:7px;white-space:nowrap" onclick="stF()">+ নতুন</button></div>
+ ${l.length?l.map(s=>`<div class="card"><div class="row" style="justify-content:flex-start;gap:12px" onclick="stF('${s.id}')">${av(s)}<div style="flex:1"><b class="nm">${E(s.n)}</b> <span class="mu">${E(s.c)}</span><div class="mu">অভিভাবক: ${E(s.g)}${ap(s.id)}</div></div><span class="mu">${N(s.para||0)}/৩০</span></div>
+ ${pz(s.para||0)}${s.p?`<div style="margin-top:8px"><a class="btn sm" href="tel:${E(s.p)}">📞 ${E(s.p)}</a></div>`:''}</div>`).join(''):'<div class="empty">কোনো ছাত্র নেই। “+ নতুন” চাপুন।</div>'}`;
+}
+function stF(id){PH=(D.s.find(x=>x.id==id)||{}).ph||'';
+ const s=D.s.find(x=>x.id==id)||{};
+ sh(`<h2>${id?'ছাত্রের তথ্য':'নতুন ছাত্র'}</h2><div style="display:flex;gap:14px;align-items:center;margin-bottom:12px"><span id="pv">${av(s)}</span><div><button class="alt sm" onclick="$('#pf').click()">📷 ছবি দিন</button><input id="pf" type="file" accept="image/*" hidden onchange="phO(this)"></div></div><label>ছাত্রের নাম *</label><input id="a1" value="${E(s.n)}"><label>অভিভাবকের নাম</label><input id="a2" value="${E(s.g)}"><label>যোগাযোগ নম্বর</label><input id="a3" type="tel" value="${E(s.p)}"><label>ক্লাস/হালকা</label><input id="a4" value="${E(s.c)}"><label>ভর্তির তারিখ</label><input id="a5" type="date" value="${E(s.d||loc().slice(0,10))}"><label>মাসিক ফি (টাকা)</label><input id="a6" type="number" inputmode="numeric" value="${E(s.f)}"><label>হিফজ সম্পন্ন (পারা, ০-৩০)</label><input id="a7" type="number" min="0" max="30" value="${E(s.para||0)}"><label>ঠিকানা/নোট</label><input id="a8" value="${E(s.note)}">${id?`<h2>সবক-সবকি লেখা</h2><div class="row"><input id="lg" placeholder="যেমন: সবক ৩ পৃষ্ঠা, সবকি ভালো" style="margin:0"><button class="sm" onclick="lgA('${id}')">যোগ</button></div><div id="lgl" style="margin-bottom:12px">${lg(s)}</div>`:''}
+ <div class="row"><button onclick="stS('${id||''}')">সংরক্ষণ</button>${id?`<button class="del" onclick="if(confirm('ছাত্র মুছবেন?')){D.s=D.s.filter(x=>x.id!='${id}');save();cl();draw()}">মুছুন</button>`:''}<button class="alt" onclick="cl()">বাতিল</button></div>`);
+}
+function stS(id){const n=$('#a1').value.trim();if(!n){alert('ছাত্রের নাম লিখুন');return}
+ const o={id:id||uid(),n,g:$('#a2').value,p:$('#a3').value,c:$('#a4').value,d:$('#a5').value,f:$('#a6').value,para:Math.min(30,Math.max(0,+$('#a7').value||0)),note:$('#a8').value,ph:PH,log:(D.s.find(x=>x.id==id)||{}).log||[]};
+ const i=D.s.findIndex(x=>x.id==id);i>=0?D.s[i]=o:D.s.push(o);save();cl();draw()}
+let PH='';function phO(i){const f=i.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const c=document.createElement('canvas'),z=Math.min(im.width,im.height),S=200;c.width=c.height=S;c.getContext('2d').drawImage(im,(im.width-z)/2,(im.height-z)/2,z,z,0,0,S,S);PH=c.toDataURL('image/jpeg',.7);$('#pv').innerHTML=av({ph:PH})};im.src=r.result};r.readAsDataURL(f)}
+function vAtt(){
+ const a=D.a[ad]||{},pc=D.s.filter(s=>a[s.id]==1).length,ac=D.s.filter(s=>a[s.id]==0).length;
+ return `<label>তারিখ</label><input type="date" value="${ad}" onchange="ad=this.value;draw()">
+ <div class="card row"><span>উপস্থিত <b class="in">${N(pc)}</b></span><span>অনুপস্থিত <b class="out">${N(ac)}</b></span><button class="sm alt" onclick="allP()">সবাই উপস্থিত</button></div>
+ ${D.s.length?D.s.map(s=>`<div class="card row"><div style="display:flex;gap:10px;align-items:center">${av(s)}<b>${E(s.n)}</b></div><div class="tg"><button class="${a[s.id]==1?'p':''}" onclick="mk('${s.id}',1)">উপস্থিত</button><button class="${a[s.id]==0?'ab':''}" onclick="mk('${s.id}',0)">অনুপস্থিত</button></div></div>`).join(''):'<div class="empty">আগে ছাত্র যোগ করুন</div>'}`;
+}
+const mk=(id,v)=>{D.a[ad]=D.a[ad]||{};D.a[ad][id]=v;save();const y=scrollY;draw();scrollTo(0,y)};
+const allP=()=>{D.a[ad]={};D.s.forEach(s=>D.a[ad][s.id]=1);save();draw()};
+function vAcc(){
+ const l=D.t.filter(x=>x.d.startsWith(mon)).sort((a,b)=>b.d.localeCompare(a.d)),i=sum(mon,'in'),o=sum(mon,'out');
+ return `<label>মাস</label><input type="month" value="${mon}" onchange="mon=this.value;draw()">
+ <div class="grid"><div class="card"><div class="mu">আয়</div><div class="big in">${M(i)}</div></div><div class="card"><div class="mu">খরচ</div><div class="big out">${M(o)}</div></div></div>
+ <div class="card row"><span>অবশিষ্ট</span><b class="big">${M(i-o)}</b></div>
+ <div class="row" style="margin:10px 0"><button style="flex:1" onclick="txF('in')">+ আয়</button><button class="del" style="flex:1" onclick="txF('out')">+ খরচ</button></div>
+ ${l.length?l.map(x=>{const s=D.s.find(y=>y.id==x.sid);return `<div class="card row" onclick="txF('${x.t}','','', '${x.id}')"><div><b>${E(x.cat)}</b>${s?' · '+E(s.n):''}<div class="mu">${new Date(x.d).toLocaleDateString('bn-BD')}${x.note?' · '+E(x.note):''}</div></div><b class="${x.t}">${x.t=='in'?'+':'−'}${M(x.amt)}</b></div>`}).join(''):'<div class="empty">এ মাসে কোনো হিসাব নেই</div>'}`;
+}
+function txF(t,sid,amt,id){
+ const x=D.t.find(y=>y.id==id)||{t,sid:sid||'',amt:amt||'',cat:sid?'মাসিক ফি':'',d:loc().slice(0,10),note:''};t=x.t;
+ sh(`<h2>${id?'হিসাব সম্পাদনা':t=='in'?'নতুন আয়':'নতুন খরচ'}</h2><label>ধরন</label><select id="b1" onchange="$('#b5w').style.display=this.value=='মাসিক ফি'?'block':'none'">${(t=='in'?CI:CO).map(c=>`<option ${c==x.cat?'selected':''}>${c}</option>`).join('')}</select>
+ <div id="b5w" style="display:${t=='in'&&(x.cat=='মাসিক ফি'||!x.cat)?'block':'none'}"><label>কোন ছাত্রের ফি</label><select id="b5"><option value="">—</option>${D.s.map(s=>`<option value="${s.id}" ${s.id==x.sid?'selected':''}>${E(s.n)}</option>`).join('')}</select></div>
+ <label>টাকার পরিমাণ</label><input id="b2" type="number" inputmode="numeric" value="${E(x.amt)}"><label>তারিখ</label><input id="b3" type="date" value="${x.d}"><label>নোট</label><input id="b4" value="${E(x.note)}">
+ <div class="row"><button onclick="txS('${t}','${id||''}')">সংরক্ষণ</button>${id?`<button class="del" onclick="if(confirm('মুছবেন?')){D.t=D.t.filter(y=>y.id!='${id}');save();cl();draw()}">মুছুন</button>`:''}<button class="alt" onclick="cl()">বাতিল</button></div>`);
+}
+function txS(t,id){const a=+$('#b2').value;if(!a){alert('টাকার পরিমাণ লিখুন');return}
+ const c=$('#b1').value,o={id:id||uid(),t,cat:c,amt:a,d:$('#b3').value,note:$('#b4').value,sid:c=='মাসিক ফি'?$('#b5').value:''};
+ const i=D.t.findIndex(x=>x.id==id);i>=0?D.t[i]=o:D.t.push(o);save();cl();draw()}
+function vMore(){
+ return `<div class="card"><label>প্রতিষ্ঠানের নাম</label><input value="${E(D.name)}" onchange="D.name=this.value;save();draw()"><label>পিন (খালি রাখলে লক থাকবে না)</label><input type="password" inputmode="numeric" value="${E(D.pin)}" onchange="D.pin=this.value;save();ok=true;alert('পিন সংরক্ষিত হয়েছে')"></div>
+ <div class="card"><b>ব্যাকআপ</b><p class="mu">ফোন বদল বা হারানোর আগে ব্যাকআপ কপি করে WhatsApp/Notes-এ সেভ রাখুন।</p><button onclick="bk()">ব্যাকআপ কপি করুন</button>
+ <p><label>পুনরুদ্ধার: ব্যাকআপ টেক্সট এখানে বসান</label><textarea id="rs" rows="3"></textarea><button class="alt" onclick="rsT()">পুনরুদ্ধার করুন</button></p></div>
+ <div class="card"><button class="del" onclick="if(confirm('সব তথ্য মুছে যাবে। নিশ্চিত?')){D={name:'আমার মাদ্রাসা',pin:'',s:[],a:{},t:[]};save();draw()}">সব তথ্য মুছুন</button></div>`;
+}
+function bk(){const t=JSON.stringify(D);try{navigator.clipboard.writeText(t).then(()=>alert('ব্যাকআপ কপি হয়েছে'),f)}catch(e){f()}
+ function f(){sh('<h2>ব্যাকআপ</h2><p class="mu">নিচের লেখা সব সিলেক্ট করে কপি করুন</p><textarea rows="8" onfocus="this.select()">'+E(t)+'</textarea><button onclick="cl()">বন্ধ</button>')}}
+function rsT(){try{const o=JSON.parse($('#rs').value);if(!Array.isArray(o.s)||!Array.isArray(o.t))throw 0;if(confirm('বর্তমান তথ্য বদলে যাবে। নিশ্চিত?')){D=Object.assign(D,o);save();draw()}}catch(e){alert('ব্যাকআপ টেক্সট সঠিক নয়')}}
+draw();
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+</script></body></html>
